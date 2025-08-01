@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="chat.css">
+  <script>
+  const token = localStorage.getItem("token");
+  if (!token) {
+    // Not logged in → redirect to login
+    window.location.href = "login.html";
+  }
+</script>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="sidebar">
+      <h2>Users</h2>
+      <ul id="userList">
+        <li>You</li>
+        <li>Sush </li>
+        <!-- Add more users dynamically -->
+      </ul>
+    </div>
+
+    <div class="chat-main">
+      <div class="chat-header">
+        <h2>Chat App</h2>
+      </div>
+
+      <div class="chat-messages" id="messages">
+        <div class="message you">You joined</div>
+        <div class="message other">Sush joined</div>
+        <div class="message other">Sush : hello</div>
+        <div class="message you">You: Hi There</div>
+        <div class="message other">Sush : What is up?</div>
+        <div class="message other">Sush : All good</div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" id="msgInput" placeholder="Type a message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
